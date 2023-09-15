@@ -20,6 +20,7 @@ pipeline {
         py.test --verbose --junit-xml test-reports/results.xml
         ''' 
       }
+      
     
       post{
         always {
@@ -28,6 +29,9 @@ pipeline {
        
       }
     }
+    stage ('Deploy') { 
+      steps { 
+        sh '/var/lib/jenkins/.local/bin/eb deploy' } }
     
   }
  }
