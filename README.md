@@ -49,4 +49,4 @@ To view the System Design Diagram, click [here!](https://github.com/auzhangLABS/
 The main issue I encountered was with the pip package command. When I signed into Jenkins user and tried to run the pip command it would give me an error. I diagnose this problem by noticing that python and python3 are two different versions. Once, I was able to figure that out I ran `sudo apt install python3-pip` instead of `sudo apt install python-pip`
 
 ## Optimization:
-I would consider creating an ash script that automates the installation of Jenkins on your instance for optimization
+I would consider creating an bash script that automates the installation of Jenkins on your instance for optimization
