@@ -24,9 +24,9 @@ Before we start, I also have to download Jenkins onto my AWS EC2 instance. To se
      `pip install --upgrade --user awsebcli`
   <br> -changes the PATH environment variable for the current system:
      `export PATH=$PATH:$HOME/.local/bin`
-  <br> -check if eb works and exists
+  <br> -check if eb works and exists:
      `eb --version`
-  <br> -set my AWS credentials
+  <br> -set my AWS credentials:
      `aws configure`
 5. Created an EB environment
    -within the console, cd into the workspace as the logged-in Jenkins user.
