@@ -11,7 +11,7 @@ Before we start, I also have to download Jenkins onto my AWS EC2 instance. To se
      -Installing python3 pip (line package manager and installer)
    -`sudo apt install unzip`
      -Downloading unzip software package
-2. Created a multibranch pipeline (allows a set of pipelines to detect branches). For Jenkins to find our Github file I selected the option called branch sources and chose Github and entered my Github link and credentials.
+2. Created a multibranch pipeline (allows a set of pipelines to detect branches). For Jenkins to find our Github file, I selected the option called branch sources and chose Github, and entered my Github link and credentials.
 3. Once, Jenkins was able to build and test my application successfully, then I installed my AWS CLI
    -Click IAM - Click users under IAM resources - Click my username - Click Security Credentials - Click Create access key - Select Command Line Interface (CLI) - Click Confirmation - Click Next - Enter AWS_CLI into the Description tag values. Once I generated, I stored my access key and secret access key
   <br> -Create a password for Jenkins using: 
