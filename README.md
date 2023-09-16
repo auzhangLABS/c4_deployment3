@@ -1,6 +1,6 @@
 # Deployment 3 Documentation
 ## Purpose:
-The purpose of deployment 3 was to set up Jenkins to build/test/deploy applications to automatically deploy AWS Elastic Beanstalk. We were able to do this using Github Webhooks. Webhooks will be triggered whenever a specific event occurs on GitHub. With this, we could automate the deployment process whenever there were changes within the GitHub repository.
+The purpose of Deployment 3 was to set up Jenkins to build/test/deploy applications automatically to AWS Elastic Beanstalk using GitHub Webhooks. Webhooks will be triggered whenever a specific event occurs on GitHub, allowing us to automate the deployment process whenever there are changes within the GitHub repository.
 
 ## Steps:
 Before we start, I also have to download Jenkins onto my AWS EC2 instance. To see the steps to install the Jenkins server (Steps 1 and 2) click [here](https://github.com/auzhangLABS/Installing-Jenkins). 
@@ -46,7 +46,7 @@ Before we start, I also have to download Jenkins onto my AWS EC2 instance. To se
 To view the System Design Diagram, click [here!](https://github.com/auzhangLABS/c4_deployment3/blob/main/diagram.png)
 
 ## Issues/ Troubleshooting:
-The main issue I was facing was with the pip package command. When I signed into Jenkins user and tried to run the pip command it would give me an error. I diagnose this problem by noticing that python and python3 are 2 very different versions. Once, I was able to figure that out I ran `sudo apt install python3-pip` instead of `sudo apt install python-pip`
+The main issue I encountered was with the pip package command. When I signed into Jenkins user and tried to run the pip command it would give me an error. I diagnose this problem by noticing that python and python3 are two different versions. Once, I was able to figure that out I ran `sudo apt install python3-pip` instead of `sudo apt install python-pip`
 
 ## Optimization:
-I would optimize this deployment by creating a bash script that will install Jenkins into my instance to automate that process. 
+I would consider creating an ash script that automates the installation of Jenkins on your instance for optimization
