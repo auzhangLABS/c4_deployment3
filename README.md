@@ -5,11 +5,11 @@ The purpose of Deployment 3 was to set up Jenkins to build/test/deploy applicati
 ## Steps:
 Before we start, I also have to download Jenkins onto my AWS EC2 instance. To see the steps to install the Jenkins server (Steps 1 and 2) click [here](https://github.com/auzhangLABS/Installing-Jenkins). 
 1. After confirming that we have Jenkins on my EC2 instance, We would have to install a couple of packages
-   -`sudo apt install python3-venv`
+   <br> -`sudo apt install python3-venv`
      -Downloading Python Virtual Environment
-   -`sudo apt install python3-pip`
+   <br> -`sudo apt install python3-pip`
      -Installing python3 pip (line package manager and installer)
-   -`sudo apt install unzip`
+   <br> -`sudo apt install unzip`
      -Downloading unzip software package
 2. Created a multibranch pipeline (allows a set of pipelines to detect branches). For Jenkins to find our Github file, I selected the option called branch sources and chose Github, and entered my Github link and credentials.
 3. Once, Jenkins was able to build and test my application successfully, then I installed my AWS CLI
