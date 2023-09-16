@@ -11,8 +11,10 @@ Before we start, I also have to download Jenkins onto my AWS EC2 instance. To se
      -Installing python3 pip (line package manager and installer)
    <br> -`sudo apt install unzip`
      -Downloading unzip software package
-2. Created a multibranch pipeline (allows a set of pipelines to detect branches). For Jenkins to find our Github file, I selected the option called branch sources and chose Github, and entered my Github link and credentials.
-3. Once, Jenkins was able to build and test my application successfully, then I installed my AWS CLI
+   <br> -`sudo apt upgrade`
+     -Install all available upgrade for all packages
+3. Created a multibranch pipeline (allows a set of pipelines to detect branches). For Jenkins to find our Github file, I selected the option called branch sources and chose Github, and entered my Github link and credentials.
+4. Once, Jenkins was able to build and test my application successfully, then I installed my AWS CLI
    -Click IAM - Click users under IAM resources - Click my username - Click Security Credentials - Click Create access key - Select Command Line Interface (CLI) - Click Confirmation - Click Next - Enter AWS_CLI into the Description tag values. Once I generated, I stored my access key and secret access key
   <br> -Create a password for Jenkins using: 
      `sudo passwd jenkins` 
@@ -26,7 +28,7 @@ Before we start, I also have to download Jenkins onto my AWS EC2 instance. To se
      `eb --version`
   <br> -set my AWS credentials
      `aws configure`
-4. Created an EB environment
+5. Created an EB environment
    -within the console, cd into the workspace as the logged-in Jenkins user.
     <br> `cd workspace`
     <br> `cd Deployment_3`
@@ -34,13 +36,13 @@ Before we start, I also have to download Jenkins onto my AWS EC2 instance. To se
      <br> `eb init` with the default option and selecting n for code commit and n for ssh.
      <br> `eb create` with the default option and selecting n for spot fleet.
    - once EB finished, it would present the application URL within the console.
-5. Added a Deploy stage within Jenkins:
+6. Added a Deploy stage within Jenkins:
    <br> `stage ('Deploy') { steps { sh '/var/lib/jenkins/.local/bin/eb deploy' } }`
    <br> -after making this change I noticed that created a new stage called Deploy in the pipeline. Additionally, it started the environment and deployed the new version to the instance.
-6. Adding webhook to trigger Jenkins when a push event is added to my GitHub.
+7. Adding webhook to trigger Jenkins when a push event is added to my GitHub.
    <br> -for the Payload URL, I add http://yourIP:8080/github-webhook/
    <br> -from here, I was able to see recent deliveries, and each time I change something in my repository it would be shown here.
-7. To test that this works. I edit my template/home.html files. After committing that change, I noticed that I was able to the changes in the recent deliveries. Over at Jenkins, I can see that it automates the process of build, testing, and deploying. Over at AWS Elastic Beanstalk, I noticed that my environment events are also updating to the new version. On the domain, I can see the changes I made. 
+8. To test that this works. I edit my template/home.html files. After committing that change, I noticed that I was able to the changes in the recent deliveries. Over at Jenkins, I can see that it automates the process of build, testing, and deploying. Over at AWS Elastic Beanstalk, I noticed that my environment events are also updating to the new version. On the domain, I can see the changes I made. 
 
 ## System Design Diagram:
 To view the System Design Diagram, click [here!](https://github.com/auzhangLABS/c4_deployment3/blob/main/diagram.png)
